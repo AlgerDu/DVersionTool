@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{1D7E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.Net461", "Example\Eg.Net461\Eg.Net461.csproj", "{F7EB723F-FA2D-4A15-8BC5-28622C5ED3C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.Netstandard2", "Eg.Netstandard2\Eg.Netstandard2.csproj", "{382303DA-E985-471E-8CDB-2B895153385F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.Netstandard2", "Example\Eg.Netstandard2\Eg.Netstandard2.csproj", "{382303DA-E985-471E-8CDB-2B895153385F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.Netcoreapp2_1", "Eg.Netcoreapp2_1\Eg.Netcoreapp2_1.csproj", "{526609C4-329A-4014-8C86-B9577AFBC0FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.Netcoreapp2_1", "Example\Eg.Netcoreapp2_1\Eg.Netcoreapp2_1.csproj", "{526609C4-329A-4014-8C86-B9577AFBC0FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
