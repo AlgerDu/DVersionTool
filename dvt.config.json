@@ -1,13 +1,13 @@
 {
   "LastVersion": null,
-  "CurrVersion": null,
+  "CurrVersion": "1.0.2.3",
   "Projects": [
-    "D.VersionTool.Core\\D.VersionTool.Core.csproj",
     "Example\\Eg.Net461\\Eg.Net461.csproj",
     "Example\\Eg.Netcoreapp2_1\\Eg.Netcoreapp2_1.csproj",
     "Example\\Eg.Netstandard2\\Eg.Netstandard2.csproj"
   ],
   "IgnoreProjects": [
+    "D.VersionTool.Core\\D.VersionTool.Core.csproj",
     "Test\\Test.VersionTool\\Test.VersionTool.csproj"
   ]
 }

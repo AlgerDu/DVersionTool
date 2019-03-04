@@ -37,6 +37,14 @@ namespace Test.VersionTool
                 );
         }
 
+        [TestMethod]
+        public void TestSet()
+        {
+            _dvtCore.RunCmd(
+                "set"
+                );
+        }
+
         private IContainer CreateContainer()
         {
             var builder = new ContainerBuilder();

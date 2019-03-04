@@ -5,9 +5,11 @@ using System.Text;
 
 namespace D.Tool.Version
 {
-    public interface IProject
+    public interface IProjectFile
     {
-        TargetFramework TargetFramework { get; }
+        TargetFramework HTF { get; }
+
+        TargetFramework LTF { get;   }
 
         /// <summary>
         /// 程序集版本

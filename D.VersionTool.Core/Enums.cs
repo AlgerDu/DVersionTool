@@ -6,10 +6,10 @@ namespace D.Tool.Version
 {
     public enum TargetFramework
     {
-        net461,
+        net461 = 1461,
 
-        netstandard20,
+        netstandard20 = 2020,
 
-        netcoreapp21
+        netcoreapp21 = 3021
     }
 }

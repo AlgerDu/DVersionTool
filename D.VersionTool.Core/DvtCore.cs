@@ -1,26 +1,31 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using D.Tool.Version.Core;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 
 namespace D.Tool.Version
 {
     public class DvtCore : IDvtCore
     {
         ILogger _logger;
+        ILoggerFactory _loggerFactory;
         IShell _shell;
 
         string _runningPath;
 
         public DvtCore(
             ILogger<DvtCore> logger
+            , ILoggerFactory loggerFactory
             , IShell shell
             )
         {
             _logger = logger;
+            _loggerFactory = loggerFactory;
             _shell = shell;
         }
 
@@ -38,6 +43,14 @@ namespace D.Tool.Version
             {
                 case "config":
                     RunConfigCmd(args);
+                    break;
+
+                case "add":
+                    RunAddCmd(args);
+                    break;
+
+                case "set":
+                    RunSetCmd(args);
                     break;
             }
         }
@@ -73,6 +86,28 @@ namespace D.Tool.Version
             config.Projects = toCtlProject.ToArray();
 
             SaveConfig(config);
+        }
+
+        private void RunSetCmd(params string[] args)
+        {
+            var config = LoadOrCreateDefault();
+
+            var version = new DVersion(config.CurrVersion);
+
+            foreach (var projectPath in config.Projects)
+            {
+                var pf = CreateProjectFile(_runningPath + projectPath);
+
+                if (pf != null)
+                    pf.SetVersion(version);
+            }
+        }
+
+        private void RunAddCmd(params string[] args)
+        {
+            var config = LoadOrCreateDefault();
+
+
         }
 
         private string[] DealFloder(DirectoryInfo floder)
@@ -125,7 +160,43 @@ namespace D.Tool.Version
                 Directory.CreateDirectory(Path.GetDirectoryName(configPath));
             }
 
-            File.AppendAllText(configPath, JsonConvert.SerializeObject(dvtConfig, Formatting.Indented));
+            File.AppendAllText(configPath, JsonConvert.SerializeObject(dvtConfig, Newtonsoft.Json.Formatting.Indented));
+        }
+
+        private IProjectFile CreateProjectFile(string path)
+        {
+            var xml = new XmlDocument();
+            xml.Load(path);
+
+            XmlNodeList nodes = xml.SelectNodes("/Project/PropertyGroup/TargetFramework");
+
+            if (nodes.Count == 1)
+            {
+                var tf = nodes[0].InnerText;
+
+                if (tf.StartsWith("netcoreapp"))
+                {
+                    return new CoreProjectFile(
+                        _loggerFactory.CreateLogger<CoreProjectFile>()
+                        , _shell
+                        , path);
+                }
+                else if (tf.StartsWith("netstandard"))
+                {
+                    return new StandardProjectFile(
+                        _loggerFactory.CreateLogger<StandardProjectFile>()
+                        , _shell
+                        , path);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
