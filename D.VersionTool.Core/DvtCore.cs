@@ -107,7 +107,17 @@ namespace D.Tool.Version
         {
             var config = LoadOrCreateDefault();
 
+            var version = new DVersion(config.CurrVersion);
 
+            version.Build++;
+
+            foreach (var projectPath in config.Projects)
+            {
+                var pf = CreateProjectFile(_runningPath + projectPath);
+
+                if (pf != null)
+                    pf.SetVersion(version);
+            }
         }
 
         private string[] DealFloder(DirectoryInfo floder)
