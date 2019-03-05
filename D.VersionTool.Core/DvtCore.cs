@@ -146,8 +146,15 @@ namespace D.Tool.Version
 
             if (File.Exists(configPath))
             {
+                var devConfig = JsonConvert.DeserializeObject<DvtConfig>(File.ReadAllText(configPath));
+
+                if (devConfig == null)
+                {
+                    devConfig = new DvtConfig();
+                }
+
                 _shell.WriteLine($"开始更新配置");
-                return JsonConvert.DeserializeObject<DvtConfig>(File.ReadAllText(configPath));
+                return devConfig;
             }
             else
             {
