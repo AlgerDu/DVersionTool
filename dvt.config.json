@@ -1,14 +1,14 @@
 {
-    "LastVersion": null,
-    "CurrVersion": "2.0.1.0",
-    "Projects": [
-        "E:\\DProject\\D.VersionTool\\Example\\Eg.Net461\\Eg.Net461.csproj",
-        "E:\\DProject\\D.VersionTool\\Example\\Eg.Netcoreapp2_1\\Eg.Netcoreapp2_1.csproj",
-        "E:\\DProject\\D.VersionTool\\Example\\Eg.Netstandard2\\Eg.Netstandard2.csproj"
-    ],
-    "IgnoreProjects": [
-        "E:\\DProject\\D.VersionTool\\D.VersionTool.Core\\D.VersionTool.Core.csproj",
-        "E:\\DProject\\D.VersionTool\\D.VersionTool.Shell.Console\\D.VersionTool.Shell.Console.csproj",
-        "E:\\DProject\\D.VersionTool\\Test\\Test.VersionTool\\Test.VersionTool.csproj"
-    ]
+  "LastVersion": "2.0.1.1",
+  "CurrVersion": "2.0.1.2",
+  "Projects": [
+    "Example\\Eg.Net461\\Eg.Net461.csproj",
+    "Example\\Eg.Netcoreapp2_1\\Eg.Netcoreapp2_1.csproj",
+    "Example\\Eg.Netstandard2\\Eg.Netstandard2.csproj"
+  ],
+  "IgnoreProjects": [
+    "D.VersionTool.Core\\D.VersionTool.Core.csproj",
+    "D.VersionTool.Shell.Console\\D.VersionTool.Shell.Console.csproj",
+    "Test\\Test.VersionTool\\Test.VersionTool.csproj"
+  ]
 }

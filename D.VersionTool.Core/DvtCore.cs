@@ -118,6 +118,10 @@ namespace D.Tool.Version
                 if (pf != null)
                     pf.SetVersion(version);
             }
+
+            config.LastVersion = config.CurrVersion;
+            config.CurrVersion = version.ToString();
+            SaveConfig(config);
         }
 
         private string[] DealFloder(DirectoryInfo floder)

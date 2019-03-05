@@ -21,7 +21,7 @@ namespace D.VersionTool.Shell.Console
 
             var core = container.Resolve<IDvtCore>();
 
-            core.SetPath(runningPath + "/");
+            core.SetPath(runningPath + "\\");
             core.RunCmd(args);
         }
 
