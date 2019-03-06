@@ -4,7 +4,7 @@
 
 ## 命令
 
-是否实现|命令|可选参数|示例|说明
+可用|命令|可选参数|示例|说明
 :-:|:-:|:-|:-|:-
 是|config|-r [configName]|dvt config -r|创建或者刷新配置文件，默认配置文件名 `dvt.config.josn`
 否||-ig projectName|dvt config -ig test.csproj|忽略对 `test.csproj` 项目版本号的管理
