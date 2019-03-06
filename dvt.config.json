@@ -1,6 +1,6 @@
 {
   "LastVersion": "2.0.1.1",
-  "CurrVersion": "2.0.1.2",
+  "CurrVersion": "2.0.1.4",
   "Projects": [
     "Example\\Eg.Net461\\Eg.Net461.csproj",
     "Example\\Eg.Netcoreapp2_1\\Eg.Netcoreapp2_1.csproj",

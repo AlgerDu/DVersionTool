@@ -191,6 +191,12 @@ namespace D.Tool.Version
 
             XmlNodeList nodes = xml.SelectNodes("/Project/PropertyGroup/TargetFramework");
 
+            if (nodes.Count == 0)
+            {
+                var prject = xml.ChildNodes[1];
+                nodes = prject.SelectNodes("/PropertyGroup[@Condition='']/TargetFrameworkVersion");
+            }
+
             if (nodes.Count == 1)
             {
                 var tf = nodes[0].InnerText;
@@ -211,12 +217,18 @@ namespace D.Tool.Version
                 }
                 else
                 {
-                    return null;
+                    return new FrameworkProjectFile(
+                         _loggerFactory.CreateLogger<FrameworkProjectFile>()
+                        , _shell
+                        , path);
                 }
             }
             else
             {
-                return null;
+                return new FrameworkProjectFile(
+                     _loggerFactory.CreateLogger<FrameworkProjectFile>()
+                    , _shell
+                    , path);
             }
         }
     }
