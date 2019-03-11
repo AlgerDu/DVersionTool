@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.VersionTool", "Test\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.VersionTool.Shell.Console", "D.VersionTool.Shell.Console\D.VersionTool.Shell.Console.csproj", "{34C98657-31E2-4AF4-AB92-E73FEB49E939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.ASPNETCoreNet461", "Example\Eg.ASPNETCoreNet461\Eg.ASPNETCoreNet461.csproj", "{BCE8932D-9A97-42DC-B965-6EFBCFD68F9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{34C98657-31E2-4AF4-AB92-E73FEB49E939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C98657-31E2-4AF4-AB92-E73FEB49E939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C98657-31E2-4AF4-AB92-E73FEB49E939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE8932D-9A97-42DC-B965-6EFBCFD68F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE8932D-9A97-42DC-B965-6EFBCFD68F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE8932D-9A97-42DC-B965-6EFBCFD68F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE8932D-9A97-42DC-B965-6EFBCFD68F9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{526609C4-329A-4014-8C86-B9577AFBC0FB} = {1D7E4A73-588A-4AA4-9EC2-847B0F6330CB}
 		{77D5498D-3AB7-461C-A534-49088098301A} = {7F315587-C20A-432A-A5CC-F5951B20563E}
 		{34C98657-31E2-4AF4-AB92-E73FEB49E939} = {CAB07CD6-F367-4AD3-A686-3B47BE98FF19}
+		{BCE8932D-9A97-42DC-B965-6EFBCFD68F9A} = {1D7E4A73-588A-4AA4-9EC2-847B0F6330CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CA6ABED3-2D05-4CA2-B28C-D061D5CA17B5}

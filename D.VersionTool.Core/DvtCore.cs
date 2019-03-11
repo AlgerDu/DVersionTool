@@ -215,6 +215,13 @@ namespace D.Tool.Version
                         , _shell
                         , path);
                 }
+                else if (tf.StartsWith("net"))
+                {
+                    return new CoreProjectFile(
+                        _loggerFactory.CreateLogger<CoreProjectFile>()
+                        , _shell
+                        , path);
+                }
                 else
                 {
                     return new FrameworkProjectFile(
